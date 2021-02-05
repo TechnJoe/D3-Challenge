@@ -12,3 +12,21 @@ function makeResponsive() {
    if (!svgArea.empty()) {
     svgArea.remove();
   }
+  
+  //Setup Chart parameters and Dimensions
+  var svgWidth = window.innerWidth;
+  var svgHeight = window.innerHeight;
+  
+  //set SVG margins
+  var margin = {
+    top: 50,
+    bottom: 50,
+    right: 50,
+    left: 50
+  };
+
+  //Define Chart area dimensions
+  var height = svgHeight - margin.top - margin.bottom;
+  var width = svgWidth - margin.left - margin.right;
+
+
