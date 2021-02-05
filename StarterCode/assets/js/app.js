@@ -64,7 +64,45 @@ var chartGroup = svg.append("g")
       .range([height, 0]);
     return yLinearScale;
   }
+  // Function for Updating xAxis Upon Click on Axis Label
+  function renderXAxes(newXScale, xAxis) {
+    var bottomAxis = d3.axisBottom(newXScale);
+    xAxis.transition()
+      .duration(1000)
+      .call(bottomAxis);
+    return xAxis;
+  }
 
+  // Function for Updating yAxis Upon Click on Axis Label
+  function renderYAxes(newYScale, yAxis) {
+    var leftAxis = d3.axisLeft(newYScale);
+    yAxis.transition()
+      .duration(1000)
+      .call(leftAxis);
+    return yAxis;
+  }
+
+ // Function for Updating Circles Group with a Transition to New Circles
+  function renderCircles(circlesGroup, newXScale, chosenXAxis, newYScale, chosenYAxis) {
+
+    circlesGroup.transition()
+      .duration(1000)
+      .attr("cx", d => newXScale(d[chosenXAxis]))
+      .attr("cy", d => newYScale(d[chosenYAxis]));
+    return circlesGroup;
+  }
+
+  // Function for Updating Text Group with a Transition to New Text
+   function renderText(textGroup, newXScale, chosenXAxis, newYScale, chosenYAxis) {
+
+    textGroup.transition()
+      .duration(1000)
+      .attr("x", d => newXScale(d[chosenXAxis]))
+      .attr("y", d => newYScale(d[chosenYAxis]))
+      .attr("text-anchor", "middle");
+
+    return textGroup;
+  }
 
 
 
