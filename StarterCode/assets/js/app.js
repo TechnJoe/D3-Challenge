@@ -40,12 +40,40 @@ var svg = d3
 var chartGroup = svg.append("g")
 .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
- //Read CSV data file
- // Append group element
-  var chartGroup = svg.append("g")
-    .attr("transform", `translate(${margin.left}, ${margin.top})`);
-
-  //read CSV data file
+   //read CSV data file
   var chosenXAxis = "Age";
   var chosenYAxis = "Smokers";
-  
+
+  // Function for Updating xScale Upon Click on Axis Label
+  function xScale(acsData, chosenXAxis) {
+    // Create Scale Functions for the Chart (chosenXAxis)
+    var xLinearScale = d3.scaleLinear()
+      .domain([d3.min(acsData, d => d[chosenXAxis]) * 0.8,
+        d3.max(acsData, d => d[chosenXAxis]) * 1.2
+      ])
+      .range([0, width]);
+    return xLinearScale;
+  }
+   // Function for Updating yScale Upon Click on Axis Label
+   function yScale(acsData, chosenYAxis) {
+    // Create Scale Functions for the Chart (chosenYAxis)
+    var yLinearScale = d3.scaleLinear()
+      .domain([d3.min(acsData, d => d[chosenYAxis]) * 0.8,
+        d3.max(acsData, d => d[chosenYAxis]) * 1.2
+      ])
+      .range([height, 0]);
+    return yLinearScale;
+  }
+
+
+
+
+
+
+
+
+
+
+
+}
+
