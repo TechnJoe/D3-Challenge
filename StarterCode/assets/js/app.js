@@ -29,4 +29,23 @@ function makeResponsive() {
   var height = svgHeight - margin.top - margin.bottom;
   var width = svgWidth - margin.left - margin.right;
 
+// Create an SVG Element/Wrapper - Select Body, Append SVG Area & Set the Dimensions
+var svg = d3
+.select("#scatter")
+.append("svg")
+.attr("width", svgWidth)
+.attr("height", svgHeight);
 
+// Append group element
+var chartGroup = svg.append("g")
+.attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+ //Read CSV data file
+ // Append group element
+  var chartGroup = svg.append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+  //read CSV data file
+  var chosenXAxis = "Age";
+  var chosenYAxis = "Smokers";
+  
