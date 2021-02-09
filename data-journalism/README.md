@@ -1,5 +1,5 @@
 # Data Journalism
-My link https://technjoe.github.io/D3-Challenge/
+My link https://technjoe.github.io/D3-Challenge/data-journalism
 
 Newsroom
 
