@@ -386,8 +386,9 @@ function makeResponsive() {
       });
   });
 }
-// When Browser Loads, makeResponsive() is Called
-makeResponsive();
+    // When Browser Loads, makeResponsive() is Called
+    makeResponsive();
 
-// When Browser Window is Resized, makeResponsive() is Called
-d3.select(window).on("resize", makeResponsive);
+    // When Browser Window is Resized, makeResponsive() is Called
+    d3.select(window).on("resize", makeResponsive);
+
