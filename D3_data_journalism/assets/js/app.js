@@ -12,7 +12,7 @@ function makeResponsive() {
   }
   
   // Setup Chart Parameters/Dimensions
-  var svgWidth = 980;
+  var svgWidth = 900;
   var svgHeight = 600;
 
   // Set SVG Margins
@@ -156,7 +156,7 @@ function makeResponsive() {
     return circlesGroup;
   }
 
-  // Import Data from the data.csv File & Execute Everything Below
+  // Import Data from the data.csv File 
   d3.csv("assets/data/data.csv")
     .then(function(acsData) {
 
@@ -346,7 +346,7 @@ function makeResponsive() {
           circlesGroup = renderCircles(circlesGroup, xLinearScale, chosenXAxis, yLinearScale, chosenYAxis);
           // Updates Text with New Values
           textGroup = renderText(textGroup, xLinearScale, chosenXAxis, yLinearScale, chosenYAxis)
-          // Updates Tooltips with New Information
+          // Updates Tooltips with New Info
           circlesGroup = updateToolTip(chosenXAxis, chosenYAxis, circlesGroup, textGroup);
           // Changes Classes to Change Bold Text
           if (chosenYAxis === "healthcare") {
