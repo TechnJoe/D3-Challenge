@@ -17,9 +17,9 @@ Using D3 techniques, a scatter plot was created that represents each state with 
 
 Included state abbreviations in the circles.
 
-Created and situated your axes and labels to the left and bottom of the chart.
+Created and situated the axes and labels to the left and bottom of the chart.
 
-Note: You'll need to use python -m http.server to run the visualization. This will host the page at localhost:8000 in your web browser.
+Note: Used python -m http.server to run the visualization. This will host the page at localhost:8000 in the web browser.
 
 Why make a static graphic when D3 lets you interact with your data?
 
